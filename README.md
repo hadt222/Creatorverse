@@ -1,7 +1,14 @@
 # Creatorverse
 
 A React frontend for managing your favorite content creators (Twitch, YouTube, Instagram, TikTok, Mastodon, etc.) with full CRUD and Supabase.
-Deployment: https://creatorverse-flame.vercel.app/
+
+deployment: https://creatorverse-flame.vercel.app/
+
+## Screenshot
+
+![Creatorverse app screenshot](public/Screenshot.png)
+
+
 
 ## Features
 
@@ -63,5 +70,6 @@ Open the URL shown (e.g. http://localhost:5173). Add creators via “Add a creat
 - `src/pages/EditCreator.jsx` – Form to edit a creator + Delete
 
 ## Video walkthrough
+## Screen recording
 
-*(Add a link or file to your GIF/Loom/YouTube walkthrough here for submission.)*
+![Creatorverse screen recording](public/Screen_record.gif)
