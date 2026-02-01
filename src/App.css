@@ -1,0 +1,130 @@
+/* App nav (persistent top bar) */
+nav.container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--pico-spacing);
+  padding-top: var(--pico-spacing);
+  padding-bottom: var(--pico-spacing);
+}
+nav.container ul {
+  margin-bottom: 0;
+}
+
+/* Page header */
+.page-header {
+  margin-bottom: 2rem;
+}
+.page-header h1 {
+  margin-bottom: 0.25rem;
+}
+.page-header p {
+  margin-bottom: 1rem;
+  color: var(--pico-muted-color);
+}
+
+/* Creator grid (cards) */
+.creator-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: var(--pico-spacing);
+}
+
+.creator-card {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  overflow: hidden;
+}
+.creator-card-image {
+  aspect-ratio: 16 / 10;
+  overflow: hidden;
+  background: var(--pico-card-sectioning-background-color);
+}
+.creator-card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.creator-card-body {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+.creator-card-body h3 {
+  margin-top: 0;
+}
+.creator-card-body h3 a {
+  text-decoration: none;
+}
+.creator-card-body h3 a:hover {
+  text-decoration: underline;
+}
+.creator-url {
+  font-size: 0.9rem;
+  margin-bottom: 0.5rem;
+}
+.creator-card-body p {
+  flex: 1;
+  margin-bottom: 1rem;
+  font-size: 0.95rem;
+  color: var(--pico-muted-color);
+}
+.creator-card-actions {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+/* View creator (detail) */
+.view-creator-image {
+  max-width: 320px;
+  margin-bottom: 1rem;
+  border-radius: var(--pico-border-radius);
+  overflow: hidden;
+}
+.view-creator-image img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+.view-creator-actions {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  margin-top: 1.5rem;
+}
+
+/* Form actions */
+.form-actions {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  margin-top: 1rem;
+}
+
+/* Breadcrumb / nav */
+nav[aria-label="Breadcrumb"] {
+  margin-bottom: 1rem;
+}
+nav[aria-label="Breadcrumb"] a {
+  margin-right: 1rem;
+}
+
+/* Footer */
+.app-footer {
+  margin-top: auto;
+  padding-top: 2rem;
+  padding-bottom: 1.5rem;
+  border-top: 1px solid var(--pico-muted-border-color);
+  color: var(--pico-muted-color);
+  font-size: 0.9rem;
+}
+.app-footer p {
+  margin: 0;
+  text-align: center;
+}
+.app-footer strong {
+  color: var(--pico-color);
+}

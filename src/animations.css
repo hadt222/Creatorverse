@@ -1,0 +1,201 @@
+/* ========== Transitions (respect reduced motion) ========== */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* ========== Page transition ========== */
+.page-content {
+  animation: pageFadeIn 0.35s ease-out;
+}
+
+@keyframes pageFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ========== Nav bar ========== */
+nav.container {
+  animation: navSlideDown 0.4s ease-out;
+  border-bottom: 1px solid var(--pico-muted-border-color, #e5e7eb);
+}
+
+@keyframes navSlideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+nav.container a {
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+nav.container a:hover {
+  opacity: 0.85;
+}
+
+/* ========== Creator grid – staggered card entrance ========== */
+.creator-grid {
+  perspective: 800px;
+}
+
+.creator-grid .creator-card {
+  animation: cardFadeUp 0.5s ease-out backwards;
+}
+
+.creator-grid .creator-card:nth-child(1) { animation-delay: 0.05s; }
+.creator-grid .creator-card:nth-child(2) { animation-delay: 0.1s; }
+.creator-grid .creator-card:nth-child(3) { animation-delay: 0.15s; }
+.creator-grid .creator-card:nth-child(4) { animation-delay: 0.2s; }
+.creator-grid .creator-card:nth-child(5) { animation-delay: 0.25s; }
+.creator-grid .creator-card:nth-child(6) { animation-delay: 0.3s; }
+.creator-grid .creator-card:nth-child(7) { animation-delay: 0.35s; }
+.creator-grid .creator-card:nth-child(8) { animation-delay: 0.4s; }
+.creator-grid .creator-card:nth-child(9) { animation-delay: 0.45s; }
+.creator-grid .creator-card:nth-child(n+10) { animation-delay: 0.5s; }
+
+@keyframes cardFadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* ========== Creator card hover ========== */
+.creator-card {
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.creator-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1), 0 4px 8px rgba(0, 0, 0, 0.06);
+}
+
+/* Card image zoom on hover */
+.creator-card-image {
+  overflow: hidden;
+}
+
+.creator-card-image img {
+  transition: transform 0.4s ease;
+}
+
+.creator-card:hover .creator-card-image img {
+  transform: scale(1.06);
+}
+
+/* Card action buttons */
+.creator-card-actions a,
+.creator-card-actions [role="button"] {
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.creator-card-actions a:hover,
+.creator-card-actions [role="button"]:hover {
+  transform: translateY(-1px);
+  opacity: 0.9;
+}
+
+/* ========== View creator (detail) image ========== */
+.view-creator-image {
+  animation: imageFadeIn 0.5s ease-out;
+}
+
+.view-creator-image img {
+  transition: transform 0.3s ease;
+}
+
+.view-creator-image:hover img {
+  transform: scale(1.02);
+}
+
+@keyframes imageFadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* ========== Loading state ========== */
+[aria-busy="true"] {
+  display: inline-block;
+  animation: loadingPulse 1.2s ease-in-out infinite;
+}
+
+@keyframes loadingPulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+
+/* ========== Form focus glow ========== */
+main.container form input:focus,
+main.container form textarea:focus {
+  transition: box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+/* ========== Primary heading on pages ========== */
+main.container > h1:first-child {
+  animation: headingFadeIn 0.4s ease-out;
+}
+
+@keyframes headingFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ========== Button / link feedback ========== */
+.form-actions button,
+.form-actions a[role="button"],
+.view-creator-actions a,
+.view-creator-actions button {
+  transition: transform 0.15s ease, opacity 0.15s ease, box-shadow 0.15s ease;
+}
+
+.form-actions button:hover:not(:disabled),
+.form-actions a[role="button"]:hover,
+.view-creator-actions a:hover,
+.view-creator-actions button:hover:not(:disabled) {
+  transform: translateY(-1px);
+}
+
+.form-actions button:active:not(:disabled),
+.form-actions a[role="button"]:active,
+.view-creator-actions a:active,
+.view-creator-actions button:active:not(:disabled) {
+  transform: translateY(0);
+}
+
+/* ========== Empty state ========== */
+main.container > p:only-child,
+main.container > p:first-of-type {
+  animation: pageFadeIn 0.4s ease-out;
+}
