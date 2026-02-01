@@ -1,6 +1,7 @@
 # Creatorverse
 
 A React frontend for managing your favorite content creators (Twitch, YouTube, Instagram, TikTok, Mastodon, etc.) with full CRUD and Supabase.
+Deployment: https://creatorverse-flame.vercel.app/
 
 ## Features
 
